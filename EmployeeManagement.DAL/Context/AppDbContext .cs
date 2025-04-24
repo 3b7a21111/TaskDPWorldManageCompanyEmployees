@@ -1,4 +1,5 @@
 ﻿using EmployeeManagement.Core.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,20 @@ namespace EmployeeManagement.DAL.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            //عشان اعمل user for role Admin first time 
+            //var hasher = new PasswordHasher<User>();
+
+            //var adminUser = new User
+            //{
+            //    Id = 1,
+            //    Username = "admin",
+            //    Password = "",  
+            //    Role = "Admin"
+            //};
+
+            //adminUser.Password = hasher.HashPassword(adminUser, "admin123");
+
+            //modelBuilder.Entity<User>().HasData(adminUser);
 
             #region 
             //relation between tables (fluent api) 
